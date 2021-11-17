@@ -105,7 +105,7 @@ MD materials properties using LAMMPS + SNAP ML-IAP
 
 `dataLf/snap_query.py`: pseudo-simulation
 
-## Dakota
+## Dakota software
 
 Official website: [https://dakota.sandia.gov/](https://dakota.sandia.gov/)
 
@@ -144,4 +144,7 @@ $ dakota -i dakota_input.in # sequential
 $ mpirun -np 4 dakota -i dakota_input.in # parallel
 ```
 
+## Multi-fidelity results
+
+![MFBO](output-1200.gif)
 
