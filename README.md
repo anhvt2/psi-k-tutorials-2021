@@ -112,6 +112,11 @@ Official website: [https://dakota.sandia.gov/](https://dakota.sandia.gov/)
 * Publicly available source code
 * Focus on EGO in this paper
 * version 6.15
+* require GCC, MPI, BOOST library, GSL, numpy (Python): for Ubuntu, some may require only one command
+
+```
+sudo apt-get install libgsl-dev
+```
 
 ```shell
 mkdir build-6.15
@@ -152,7 +157,7 @@ $ mpirun -np 4 dakota -i dakota_input.in # parallel
 
 ![MFBO](output-1200.gif)
 
-## Reference
+## References
 
 If you find this repository helpful, please consider citing one of these references, ranking from top to bottom in a decreasing order.
 
@@ -198,3 +203,7 @@ If you find this repository helpful, please consider citing one of these referen
   note = {V001T02A073},
 }
 ```
+
+## Acknowledgment
+
+The views expressed in the article do not necessarily represent the views of the U.S. Department of Energy or the United States Government. Sandia National Laboratories is a multimission laboratory managed and operated by National Technology and Engineering Solutions of Sandia, LLC., a wholly owned subsidiary of Honeywell International, Inc., for the U.S. Department of Energy’s National Nuclear Security Administration under Contract No. DE-NA-0003525.
