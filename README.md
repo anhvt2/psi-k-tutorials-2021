@@ -148,3 +148,49 @@ $ mpirun -np 4 dakota -i dakota_input.in # parallel
 
 ![MFBO](output-1200.gif)
 
+## Reference
+
+If you find this repository helpful, please consider citing one of these references, ranking from top to bottom in a decreasing order.
+
+1. https://aip.scitation.org/doi/abs/10.1063/5.0015672
+```
+@article{tran2020multi,
+  title={Multi-fidelity machine-learning with uncertainty quantification and {B}ayesian optimization for materials design: {A}pplication to ternary random alloys},
+  author={Tran, Anh and Tranchida, Julien and Wildey, Tim and Thompson, Aidan P},
+  journal={The Journal of Chemical Physics},
+  volume={153},
+  issue={7},
+  pages={074705},
+  year={2020},
+  publisher={AIP Publishing}
+}
+```
+
+
+2. https://asmedigitalcollection.asme.org/computingengineering/article-abstract/20/3/031007/1081854
+```
+@article{tran2020smfbo2cogp,
+  title={{sMF-BO-2CoGP: A sequential multi-fidelity constrained Bayesian optimization for design applications}},
+  author={Tran, Anh and Wildey, Tim and McCann, Scott},
+  journal = {Journal of Computing and Information Science in Engineering},
+  year={2020},
+  volume={20},
+  number={3},
+  pages={1--15},
+}
+```
+
+3. https://asmedigitalcollection.asme.org/IDETC-CIE/proceedings-abstract/IDETC-CIE2019/V001T02A073/1069648
+```
+@inproceedings{tran2019sbfbo2cogp,
+  title={{sBF-BO-2CoGP: A sequential bi-fidelity constrained Bayesian optimization for design applications}},
+  author={Tran, Anh and Wildey, Tim and McCann, Scott},
+  booktitle={Proceedings of the ASME 2019 IDETC/CIE},
+  year = {2019},
+  month = {08},
+  volume = {Volume 1: 39th Computers and Information in Engineering Conference},
+  series = {International Design Engineering Technical Conferences and Computers and Information in Engineering Conference},
+  organization={American Society of Mechanical Engineers},
+  note = {V001T02A073},
+}
+```
