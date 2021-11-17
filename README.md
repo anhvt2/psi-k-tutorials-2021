@@ -4,7 +4,7 @@ Authors: Anh Tran (anhtran@sandia.gov), Julien Tranchida (Julien.TRANCHIDA@cea.f
 
 Official workshop website: https://www.mlip-workshop-2021.xyz/schedule
 
-## File/Folder Structures
+## Structures
 ```
 .
 ├── bayesOpt_batchParallel_demo
