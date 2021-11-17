@@ -114,6 +114,8 @@ Official website: [https://dakota.sandia.gov/](https://dakota.sandia.gov/)
 * version 6.15
 
 ```shell
+mkdir build-6.15
+cd build-6.15
 cmake  \
   -D CMAKE_C_FLAGS="-O2 -fextended-identifiers -finput-charset=UTF-8 -fPIC"  \
   -D CMAKE_CXX_FLAGS="-O2 -fPIC"  \
@@ -124,7 +126,6 @@ cmake  \
   -D DAKOTA_HDF5:BOOL=TRUE  \
   -D Boost_NO_BOOST_CMAKE:BOOL=TRUE  \
   -D ENABLE_SPEC_MAINT:BOOL=TRUE  \
-  -D DevDebug=ON  \
   -D DAKOTA_PYTHON=ON  \
   -D CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/mpicxx  \
   -D MPI_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so  \
@@ -136,6 +137,9 @@ cmake  \
   -D DAKOTA_PYTHON_DIRECT_INTERFACE=TRUE \
   -D DAKOTA_PYTHON_DIRECT_INTERFACE_NUMPY=TRUE \
   ../dakota-6.15.0-public-src-cli
+
+make
+sudo ln -sf $(pwd)/test/dakota /usr/bin # or simply put somewhere under $PATH
 ```
 
 How to run (sequential / parallel on multi-core architecture): 
