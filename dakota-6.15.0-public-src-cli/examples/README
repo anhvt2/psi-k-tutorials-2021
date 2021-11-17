@@ -1,0 +1,28 @@
+*** This examples/README largely been superseded by README.md
+*** corresponding to the new Examples Library. A few legacy example
+*** directories that remain in top-level dakota/examples are still
+*** documented here.
+
+The directory Dakota/examples is designed to help users get started
+using Dakota. The remaining legacy examples are grouped into the
+following directories:
+
+examples/users: Examples found in the Dakota User's Manual. The
+examples in the Tutorial chapter demonstrate application of various
+Dakota methods to simple analytic functions via both direct and
+system/fork interfaces to simulators. More in-depth examples of
+performing specific studies with various Dakota methods, including
+uncertainty quantification, least squares (calibration), and
+optimization appear throughout the manual. Also advanced examples such
+as optimization under uncertainty, second-order probability, and
+surrogate-based optimization.
+
+examples/advanced: Examples used in Advanced Topics training.
+
+examples/parallelism: A range of Dakota + application parallelism
+examples from massively serial (embarrassingly parallel) to parallel
+evaluations of a parallel analysis code.
+
+examples/platforms: Platform-specific guidance for getting started
+with Dakota, including potentially helpful compilation and run-time
+options.

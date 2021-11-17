@@ -1,0 +1,65 @@
+#@ s*: Label=FastTest
+#@ p0: MPIProcs=2
+#@ p1: MPIProcs=3
+#@ s*: TimeoutAbsolute=3600
+#@ s*: TimeoutDelay=1200
+
+#environment,
+
+method,
+        model_pointer = 'HIERARCH'
+        multilevel_sampling
+          pilot_samples = 20            #s0,#s1,#s2,#s3,#s4,#s5,#s6,#s7,#s8,#s9,#s11,#s12
+          seed = 1237                   #s0,#s1,#s2,#s3,#s4,#s5,#s6,#s7,#s8,#s9,#s11,#s12
+#         pilot_samples = 100 50 40 20          #s10
+#         seed_sequence = 1234 2345 3456 4567   #s10
+          max_iterations = 5                    #s0,#s1,#s2,#s5,#s6,#s7,#s10
+#         max_iterations = 10                   #s3,#s4,#s8,#s9,#s11,#s12
+          allocation_target = mean              #s0,#s1,#s2,#s5,#s6,#s7,#s10
+#         allocation_target = variance          #s3,#s4,#s8,#s9,#s11,#s12
+#               optimization
+          qoi_aggregation = sum                 #s0,#s1,#s2,#s3,#s4,#s10,#s11
+#         qoi_aggregation = max                 #s5,#s6,#s7,#s8,#s9,#s12
+          convergence_tolerance = .1            #s0,#s3,#s5,#s8
+#         convergence_tolerance = .01           #s1,#s4,#s6,#s9,#s10
+#         convergence_tolerance = .001          #s2,#s7,#s11,#s12
+#         convergence_tolerance = .0001
+#		  convergence_tolerance_type = relative #s0,#s3,#s2,#s8
+        output silent
+
+model,
+	id_model = 'HIERARCH'
+	surrogate hierarchical
+	  ordered_model_fidelities = 'SIM1'
+
+model,
+	id_model = 'SIM1'
+	simulation
+	  solution_level_control = 'N_x'
+# linear in modes, linear in spatial coords:
+#	  solution_level_cost = 630. 1260. 2100. 4200.
+# linear in modes, cubic in spatial coords:
+	  solution_level_cost = 567. 4536. 21000. 168000.
+
+variables,
+	uniform_uncertain = 7
+	  lower_bounds    = 7*-1.
+	  upper_bounds    = 7* 1.
+	discrete_state_set integer = 2
+#	  num_set_values = 6 2
+#	  set_values = 5 15 30 60 100 200 # number of spatial coords
+#	  	       3 21    	      	  # number of Fourier solution modes
+	  num_set_values = 4 2
+	  set_values = 30 60 100 200	  # number of spatial coords
+	  	       3 21    	      	  # number of Fourier solution modes
+	  initial_state = 30 21
+	  descriptors 'N_x' 'N_mod'
+
+interface,
+	direct
+	  analysis_driver = 'transient_diffusion_1d'
+
+responses,
+	response_functions = 1
+	no_gradients
+	no_hessians
