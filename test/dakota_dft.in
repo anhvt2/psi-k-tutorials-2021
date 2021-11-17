@@ -1,0 +1,40 @@
+# adopted from 6.14/dakota-6.14.0.src/dakota-examples/official/drivers/Python/di/dakota_rosenbrock_python.in
+
+environment
+  tabular_data
+    tabular_data_file = 'dft_opt.dat'
+
+method
+  efficient_global
+    gaussian_process experimental
+    initial_samples = 2
+    seed = 234
+    batch_size = 3
+    # nonblocking synchronization # comment: batch-sequential par, uncomment: asynch par
+    max_iterations = 100
+
+
+variables
+  continuous_design = 2
+    lower_bounds   0       0
+    upper_bounds   54      54
+    descriptors    'x1'   'x2'
+
+
+interface,
+  fork
+    analysis_drivers = 'python3 dft_query.py'
+    # parameters_file = 'params.in'
+    # results_file = 'results.out'
+    file_tag file_save
+  # system
+    # analysis_drivers = 'python3 dft_query.py'
+    # parameters_file = 'params.in'
+    # results_file = 'results.out'
+    # file_tag file_save
+
+responses
+  objective_functions = 1
+  nonlinear_inequality_constraints = 1
+  no_gradients
+  no_hessians
