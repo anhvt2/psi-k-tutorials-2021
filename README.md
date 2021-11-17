@@ -93,13 +93,13 @@ Official workshop website: https://www.mlip-workshop-2021.xyz/schedule
 * Input: chemical composition, or more precisely, number of atoms in a simulation cell
 * Output: bulk modulus
 
-## `dataHf`
+## `dataHf/`
 
 DFT materials properties prediction using Quantum ESPRESSO
 
 `dataHf/dft_query.py`: pseudo-simulation
 
-## `dataLf`
+## `dataLf/`
 
 MD materials properties using LAMMPS + SNAP ML-IAP
 
