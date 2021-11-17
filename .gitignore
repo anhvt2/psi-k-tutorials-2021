@@ -1,3 +1,5 @@
+build-6.15/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
